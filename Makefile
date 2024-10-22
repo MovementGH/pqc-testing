@@ -30,7 +30,7 @@ pqov:
 	git clone https://github.com/pqov/pqov
 
 $(PQOV)/Makefile: pqov
-	cd pqov && python create_nist_project.py > /dev/null
+	cd pqov && python3 create_nist_project.py > /dev/null
 
 libpqov_%.a: $(PQOV)/Makefile
 	for file in $(PQOV)/$*/*.c; do $(CC) -c $(PQOV_CFLAGS) -o $${file%.c}.o $${file}; done
