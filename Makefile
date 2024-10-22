@@ -71,8 +71,7 @@ test: $(TESTS)
 	for file in *.test; do echo "========== $${file%.test} =========="; ./$$file; echo ""; done > results.txt
 
 clean:
-	rm -f *.o *.test *.all
-	rm results.txt
+	rm -f *.o *.test *.all results.txt
 
 realclean: clean
 	rm -rf falcon-round3 MAYO-C pqov
