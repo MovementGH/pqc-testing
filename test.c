@@ -5,7 +5,8 @@
 #include "benchmark.h"
 
 #define MLEN 86
-#define BENCHMARK_LENGTH 1000000
+#define BENCHMARK_LENGTH 500000
+#define MIN_RUNS 10
 
 unsigned char *sm, *pk, *sk, *m, *m2;
 unsigned long long smlen, pmlen;
@@ -36,8 +37,8 @@ void verify() {
 int main() {
     setup();
 
-    float signTime = benchmark(sign, BENCHMARK_LENGTH);
-    float verifyTime = benchmark(verify, BENCHMARK_LENGTH);
+    float signTime = benchmark(sign, BENCHMARK_LENGTH, MIN_RUNS);
+    float verifyTime = benchmark(verify, BENCHMARK_LENGTH, MIN_RUNS);
 
     printf("Public Key Size: %d\n", CRYPTO_PUBLICKEYBYTES);
     printf("Private Key Size: %d\n", CRYPTO_SECRETKEYBYTES);
