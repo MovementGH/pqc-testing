@@ -1,9 +1,6 @@
 *.a
 *.o
 *.test
-
-MAYO-C
-falcon-round3
-pqov
+*-src
 
 results.txt
